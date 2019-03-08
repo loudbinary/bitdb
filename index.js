@@ -16,7 +16,7 @@ const traverse = require('traverse')
 const MongoClient = require('mongodb').MongoClient;
 const Bitdb = {
   config: {
-    url: 'mongodb://localhost:27017',
+    url: `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}`,
     dbName: 'bitdb'
   },
   confirmed: function() {
